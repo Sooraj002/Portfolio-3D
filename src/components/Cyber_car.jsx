@@ -12,7 +12,8 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('public/cyber_car-transformed.glb')
+  const { nodes, materials } = useGLTF('./cyber_car-transformed.glb')
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.cb_car_export_cb_car_0.geometry} material={materials.cb_car} rotation={[Math.PI, 0, -Math.PI]} />
