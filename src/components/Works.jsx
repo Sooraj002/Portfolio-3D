@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import WebDesign from"./WebDesign"
+import Development from"./Development"
+import ProductDesign from"./ProductDesign"
 
 const data = [
   "Web Design",
@@ -42,7 +45,7 @@ const ListItem = styled.li`
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
-  transition:1s;
+  transition: 1s;
 
   &::after {
     content: "${(props) => props.text}";
@@ -51,16 +54,13 @@ const ListItem = styled.li`
     -webkit-text-stroke: 2px white;
     /* left: 0; */
     color: pink;
-    
-    
   }
-  
+
   &:hover {
     color: pink;
     -webkit-text-stroke: 2px pink;
     animation: 1s moveText linear;
     @keyframes moveText {
-      
     }
     ::after {
       color: rebeccapurple;
@@ -70,21 +70,31 @@ const ListItem = styled.li`
 
 const Right = styled.div`
   flex: 1;
+  scale: 0.9;
 `;
 const Works = () => {
+  const [work, setWork] = useState("Web Design");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} $text={item}>
+              <ListItem key={item} $text={item} onClick={()=>{setWork(item)}}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {work === "Web Design" ? (
+            <WebDesign />
+          ) : work === "Development" ? (
+            <Development />
+          ) : (
+            <ProductDesign />
+          )}
+        </Right>
       </Container>
     </Section>
   );

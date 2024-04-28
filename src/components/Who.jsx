@@ -1,5 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Cube from "./Cube";
+import {
+  OrbitControls,
+  Text,
+  RenderTexture,
+  PerspectiveCamera,
+} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 // Styled Components
 
@@ -67,14 +75,24 @@ const Hero = () => {
   return (
     <Section>
       <Container>
-        <Left>{/* 3D Model */}</Left>
+        <Left>
+          {" "}
+          <Canvas camera={{ fov: 25, position: [4, 4, 4] }}>
+            <OrbitControls enableZoom={false} autoRotate={true} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+          </Canvas>
+        </Left>
         <Right>
           <Title>Think outside the square space</Title>
           <WhatWeDo>
             <Line src="./img/line.png" alt="img" />
             <Subtitle>What We Do</Subtitle>
           </WhatWeDo>
-          <Desc>A creative group of designers and developers with a passion and art.</Desc>
+          <Desc>
+            A creative group of designers and developers with a passion and art.
+          </Desc>
           <Button>See our Works</Button>
         </Right>
       </Container>
