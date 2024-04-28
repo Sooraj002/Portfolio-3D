@@ -1,9 +1,12 @@
 {
+  "homepage": "https://Sooraj002.github.io/Portfolio-3D",
   "name": "react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy":"npm run dev",
+    "deploy":"gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
