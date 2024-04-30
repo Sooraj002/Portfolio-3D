@@ -105,6 +105,7 @@ const Img = styled.img`
   right: 0;
   margin: auto;
   animation: animate 2s infinite ease alternate;
+  scale: 0.6;
 
   @media only screen and (max-width: 768px) {
     width: 400px;
@@ -141,7 +142,7 @@ const Hero = () => {
               <directionalLight position={[3, 10, 10]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>
                 <MeshDistortMaterial
-                  color="#474d97"
+                  color="#5b4797"
                   attach="material"
                   distort={0.6}
                   speed={1}
@@ -149,7 +150,7 @@ const Hero = () => {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src="./img/image.png" />
+          <Img src="./img/moon.png" />
         </Right>
       </Container>
     </Section>
