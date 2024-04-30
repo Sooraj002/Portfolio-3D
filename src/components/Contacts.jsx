@@ -11,7 +11,8 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
 `;
 
@@ -64,14 +65,6 @@ const Button = styled.button`
   padding: 20px;
 `;
 
-const Right = styled.div`
-  flex: 1;
-
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
 const Contact = () => {
   const ref = useRef();
   const [success, setSuccess] = useState(null);
@@ -100,22 +93,15 @@ const Contact = () => {
   return (
     <Section>
       <Container>
-        <Left>
-          <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Us</Title>
-            <Input placeholder="Name" name="name" />
-            <Input placeholder="Email" name="email" />
-            <TextArea
-              placeholder="Write your message"
-              name="message"
-              rows={10}
-            />
-            <Button type="submit">Send</Button>
-            {success &&
-              "Your message has been sent. We'll get back to you soon :)"}
-          </Form>
-        </Left>
-        <Right></Right>
+        <Form ref={ref} onSubmit={handleSubmit}>
+          <Title>Contact Us</Title>
+          <Input placeholder="Name" name="name" />
+          <Input placeholder="Email" name="email" />
+          <TextArea placeholder="Write your message" name="message" rows={10} />
+          <Button type="submit">Send</Button>
+          {success &&
+            "Your message has been sent. We'll get back to you soon :)"}
+        </Form>
       </Container>
     </Section>
   );

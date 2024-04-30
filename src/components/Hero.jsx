@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-import * as THREE from "three";
-
-import React, { Suspense, useRef } from "react";
+import React, { Suspense } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
@@ -16,7 +13,7 @@ const Section = styled.div`
   justify-content: space-between;
 
   @media only screen and (max-width: 768px) {
-    height: 200vh;
+    height: 100vh;
   }
 `;
 
@@ -93,8 +90,7 @@ const Right = styled.div`
   flex: 3;
   position: relative;
   @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 100%;
+    display: none;
   }
 `;
 
@@ -138,7 +134,7 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          <Canvas>
+          <Canvas className="three-d-sphere">
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
