@@ -6,7 +6,6 @@ import {
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
-import styled from "styled-components";
 
 const Cube = () => {
   const textRef = useRef();
@@ -22,7 +21,7 @@ const Cube = () => {
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
           <color attach="background" args={["#dc9dcd"]} />
           <Text ref={textRef} fontSize={3} color="#555">
-          Hello
+            Hello
           </Text>
         </RenderTexture>
       </meshStandardMaterial>

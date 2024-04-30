@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import * as THREE from "three";
 
 import React, { Suspense, useRef } from "react";
@@ -108,23 +108,19 @@ const Img = styled.img`
   left: 0;
   right: 0;
   margin: auto;
-  animation: animate 2s infinite ease-in-out alternate;
-  scale: 0.6;
+  animation: animate 2s infinite ease alternate;
 
   @media only screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 
   @keyframes animate {
     to {
-      transform: translateY(40px);
+      transform: translateY(20px);
     }
   }
 `;
-
-
-
 const Hero = () => {
   return (
     <Section>
@@ -149,15 +145,15 @@ const Hero = () => {
               <directionalLight position={[3, 10, 10]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>
                 <MeshDistortMaterial
-                  color="#da4ea2"
+                  color="#474d97"
                   attach="material"
-                  distort={0.4}
+                  distort={0.6}
                   speed={1}
                 />
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src="./img/moon.png" />
+          <Img src="./img/image.png" />
         </Right>
       </Container>
     </Section>
