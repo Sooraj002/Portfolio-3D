@@ -29,7 +29,7 @@ const Links = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 50px;
+  height: 100px;
 `;
 
 const List = styled.ul`
