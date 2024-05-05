@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Cube from "./Cube";
-import {
-  OrbitControls,
-  Text,
-  RenderTexture,
-  PerspectiveCamera,
-} from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 // Styled Components

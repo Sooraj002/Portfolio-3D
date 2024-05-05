@@ -1,10 +1,5 @@
-import {
-  OrbitControls,
-  Text,
-  RenderTexture,
-  PerspectiveCamera,
-} from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Text, RenderTexture, PerspectiveCamera } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
 
 const Cube = () => {
