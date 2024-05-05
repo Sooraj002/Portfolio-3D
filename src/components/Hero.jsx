@@ -1,7 +1,4 @@
-import  { useEffect } from "react";
-import * as THREE from "three";
-
-import React, { Suspense, useRef } from "react";
+import React, { Suspense } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
@@ -16,7 +13,7 @@ const Section = styled.div`
   justify-content: space-between;
 
   @media only screen and (max-width: 768px) {
-    height: 200vh;
+    height: 100vh;
   }
 `;
 
@@ -93,8 +90,7 @@ const Right = styled.div`
   flex: 3;
   position: relative;
   @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 100%;
+    display: none;
   }
 `;
 
@@ -108,23 +104,20 @@ const Img = styled.img`
   left: 0;
   right: 0;
   margin: auto;
-  animation: animate 2s infinite ease-in-out alternate;
+  animation: animate 2s infinite ease alternate;
   scale: 0.6;
 
   @media only screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 
   @keyframes animate {
     to {
-      transform: translateY(40px);
+      transform: translateY(20px);
     }
   }
 `;
-
-
-
 const Hero = () => {
   return (
     <Section>
@@ -142,16 +135,16 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          <Canvas>
+          <Canvas className="three-d-sphere">
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 10, 10]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
+              <Sphere args={[1, 100, 200]} scale={3.4}>
                 <MeshDistortMaterial
-                  color="#da4ea2"
+                  color="#5b4797"
                   attach="material"
-                  distort={0.4}
+                  distort={0.6}
                   speed={1}
                 />
               </Sphere>

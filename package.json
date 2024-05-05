@@ -1,22 +1,25 @@
 {
+  "homepage": "https://Sooraj002.github.io/Portfolio-3D",
   "name": "react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
-    "@react-three/drei": "^9.105.4",
+    "@react-three/drei": "^9.105.5",
     "@react-three/fiber": "^8.16.2",
     "audit": "^0.0.6",
     "fix": "^0.0.3",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-simple-maps": "^1.0.0",
     "styled-components": "^6.1.8",
     "three": "^0.164.1"
   },

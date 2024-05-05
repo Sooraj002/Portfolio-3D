@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import WebDesign from"./WebDesign"
-import Development from"./Development"
-import ProductDesign from"./ProductDesign"
+import WebDesign from "./WebDesign";
+import Development from "./Development";
+import ProductDesign from "./ProductDesign";
 
 const data = [
   "Web Design",
@@ -17,19 +17,32 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
 `;
 
 const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    justify-content: center;
+  }
 `;
 
 const List = styled.ul`
@@ -38,40 +51,29 @@ const List = styled.ul`
   flex-direction: column;
   gap: 20px;
 `;
+
 const ListItem = styled.li`
-  font-size: 75px;
+  font-size: 80px;
   font-weight: bold;
   cursor: pointer;
-  color: transparent;
-  -webkit-text-stroke: 1px white;
   position: relative;
+  color: white;
   transition: 1s;
 
-  &::after {
-    content: "${(props) => props.text}";
-    position: absolute;
-    top: 0;
-    -webkit-text-stroke: 2px white;
-    /* left: 0; */
-    color: pink;
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+    -webkit-text-stroke: 0px;
   }
 
   &:hover {
     color: pink;
-    -webkit-text-stroke: 2px pink;
-    animation: 1s moveText linear;
-    @keyframes moveText {
-    }
-    ::after {
-      color: rebeccapurple;
-    }
   }
 `;
 
 const Right = styled.div`
   flex: 1;
-  scale: 0.9;
 `;
+
 const Works = () => {
   const [work, setWork] = useState("Web Design");
   return (
@@ -80,7 +82,13 @@ const Works = () => {
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} $text={item} onClick={()=>{setWork(item)}}>
+              <ListItem
+                key={item}
+                $text={item}
+                onClick={() => {
+                  setWork(item);
+                }}
+              >
                 {item}
               </ListItem>
             ))}
